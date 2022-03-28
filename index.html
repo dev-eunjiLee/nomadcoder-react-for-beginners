@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <body>
-<div id="root"></div>
+<div id="root" ></div>
 </body>
 <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
     const root = document.getElementById("root");
-    const h3 = React.createElement("h3", {
-        onMouseEnter: () => console.log('mouseEnter')
-    }, "Hello, I'm a h3");
-    const btn = React.createElement("button", {
-        onClick: () => console.log('I am clicked')
-    }, "Click me");
-    const container = React.createElement("div", null, [h3, btn]); // * 원하는 요소들을 배열로 배치한 후, 이 객체 하나만 Render()하면 된다.
+    const Title = (
+        <h3 id="title" onMouseEnter={() => console.log('mouseEnter')}>
+            Hello, I'm a h3
+        </h3>
+    )
+    const Button = (
+        <button
+            style={{backgroundColor: "tomato"}}
+            onClick={() => console.log('I am clicked')}
+        >
+            Click me
+        </button>
+    )
+    const container = React.createElement("div", null, [Title, Button]); // * 원하는 요소들을 배열로 배치한 후, 이 객체 하나만 Render()하면 된다.
     ReactDOM.render(container, root); // * ReactDOM.render(span, root): React element를 가지고 span을 만들어서 root안에 만들어 html 문서를 만들겠다!
 </script>
 </html>
