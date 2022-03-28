@@ -7,7 +7,13 @@
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 <script>
     const root = document.getElementById("root");
-    const span = React.createElement("span", {id: "sexy-span", style: {color: "red"}}, "Hello, I'm a span")
-    ReactDOM.render(span, root); // * ReactDOM.render(span, root): React element를 가지고 span을 만들어서 root안에 만들어 html 문서를 만들겠다!
+    const h3 = React.createElement("h3", {
+        onMouseEnter: () => console.log('mouseEnter')
+    }, "Hello, I'm a h3");
+    const btn = React.createElement("button", {
+        onClick: () => console.log('I am clicked')
+    }, "Click me");
+    const container = React.createElement("div", null, [h3, btn]); // * 원하는 요소들을 배열로 배치한 후, 이 객체 하나만 Render()하면 된다.
+    ReactDOM.render(container, root); // * ReactDOM.render(span, root): React element를 가지고 span을 만들어서 root안에 만들어 html 문서를 만들겠다!
 </script>
 </html>
