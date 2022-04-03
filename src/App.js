@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [counter, setValue] = useState(0);
@@ -6,7 +6,10 @@ function App() {
     setValue((prev) => {
       return prev + 1;
     });
-  console.log("call an api");
+  console.log("I run all the time");
+  useEffect(() => {
+    console.log("CALL THE API...");
+  }, []);
   return (
     <div>
       <h1>{counter}</h1>
