@@ -14,6 +14,7 @@ function App() {
   };
   return (
     <div>
+      <div>Array length: {toDos.length}</div>
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
